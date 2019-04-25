@@ -8,7 +8,7 @@ end
 
 domains = {
   frontend: 'shop.test',
-  backend:  'shop-back.test'
+  backend:  'back.shop.test'
 }
 
 config = {
