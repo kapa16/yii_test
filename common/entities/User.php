@@ -1,7 +1,8 @@
 <?php
-namespace common\models;
+namespace common\entities;
 
 use Yii;
+use yii\base\Exception;
 use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
@@ -24,9 +25,28 @@ use yii\web\IdentityInterface;
  */
 class User extends ActiveRecord implements IdentityInterface
 {
-    const STATUS_DELETED = 0;
-    const STATUS_INACTIVE = 9;
-    const STATUS_ACTIVE = 10;
+    public const STATUS_DELETED = 0;
+    public const STATUS_INACTIVE = 9;
+    public const STATUS_ACTIVE = 10;
+
+    /**
+     * User constructor.
+     * @param string $username
+     * @param string $email
+     * @param string $password
+     * @throws Exception
+     */
+    public function __construct(string $username, string $email, string $password)
+    {
+        $this->username = $username;
+        $this->email = $email;
+        $this->setPassword($password);
+        $this->status = self::STATUS_INACTIVE;
+        $this->created_at = time();
+        $this->generateAuthKey();
+        $this->generateEmailVerificationToken();
+        parent::__construct();
+    }
 
 
     /**
@@ -172,6 +192,7 @@ class User extends ActiveRecord implements IdentityInterface
      * Generates password hash from password and sets it to the model
      *
      * @param string $password
+     * @throws Exception
      */
     public function setPassword($password)
     {
@@ -180,6 +201,7 @@ class User extends ActiveRecord implements IdentityInterface
 
     /**
      * Generates "remember me" authentication key
+     * @throws Exception
      */
     public function generateAuthKey()
     {

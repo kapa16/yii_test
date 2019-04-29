@@ -18,7 +18,7 @@ return [
             'cookieValidationKey' => $params['cookieValidationKey'],
         ],
         'user' => [
-            'identityClass' => 'common\models\User',
+            'identityClass' => 'common\entities\User',
             'enableAutoLogin' => true,
             'identityCookie' => [
                 'name' => '_identity',
@@ -28,7 +28,7 @@ return [
         ],
         'session' => [
             // this is the name of the session cookie used for login on the backend
-            'name' => 'advanced',
+            'name' => '_session',
             'cookieParams' => [
                 'httpOnly' => true,
                 'domain' => $params['cookieDomain'],
@@ -47,13 +47,13 @@ return [
             'errorAction' => 'site/error',
         ],
         'backendUrlManager' => require __DIR__ . '/urlManager.php',
-        'frontUrlManager' => require __DIR__ . '../../frontend/config/urlManager.php',
-        'urlManager' => function () {
-            Yii::$app->get('backendUrlManager');
+        'frontUrlManager' => require __DIR__ . '/../../frontend/config/urlManager.php',
+        'urlManager' => static function () {
+            return Yii::$app->get('backendUrlManager');
         }
     ],
 
-    'on access' => [
+    'as access' => [
         'class' => 'yii\filters\AccessControl',
         'except' => ['site/login', 'site/error'],
         'rules' => [
