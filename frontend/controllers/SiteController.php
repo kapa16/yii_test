@@ -3,6 +3,7 @@ namespace frontend\controllers;
 
 use frontend\forms\ResendVerificationEmailForm;
 use frontend\forms\VerifyEmailForm;
+use frontend\services\auth\SignupService;
 use Yii;
 use yii\base\InvalidArgumentException;
 use yii\web\BadRequestHttpException;
@@ -149,17 +150,18 @@ class SiteController extends Controller
      * Signs user up.
      *
      * @return mixed
+     * @throws \yii\base\Exception
      */
     public function actionSignup()
     {
-        $model = new SignupForm();
-        if ($model->load(Yii::$app->request->post()) && $model->signup()) {
+        $form = new SignupForm();
+        if ($form->load(Yii::$app->request->post()) && $form->validate() && (new SignupService())->signup($form)) {
             Yii::$app->session->setFlash('success', 'Thank you for registration. Please check your inbox for verification email.');
             return $this->goHome();
         }
 
         return $this->render('signup', [
-            'model' => $model,
+            'model' => $form,
         ]);
     }
 
