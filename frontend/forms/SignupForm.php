@@ -49,7 +49,7 @@ class SignupForm extends Model
             return null;
         }
         
-        $user = new User($this->username, $this->email, $this->password);
+        $user = User::signup($this->username, $this->email, $this->password);
 
         return $user->save() && $this->sendEmail($user);
 

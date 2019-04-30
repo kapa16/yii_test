@@ -1,0 +1,45 @@
+[10140] Log opened at 2019-04-25 13:16:38
+[10140] I: Connecting to configured address/port: localhost:9000.
+[10140] E: Time-out connecting to client (Waited: 200 ms). :-(
+[10140] Log closed at 2019-04-25 13:16:38
+[10140]
+[5572] Log opened at 2019-04-25 13:19:05
+[5572] I: Connecting to configured address/port: localhost:9000.
+[5572] E: Time-out connecting to client (Waited: 200 ms). :-(
+[5572] Log closed at 2019-04-25 13:19:06
+[5572]
+[1964] Log opened at 2019-04-25 14:05:18
+[1964] I: Connecting to configured address/port: localhost:9000.
+[1964] E: Time-out connecting to client (Waited: 200 ms). :-(
+[1964] Log closed at 2019-04-25 14:05:18
+[1964]
+[8396] Log opened at 2019-04-25 15:03:10
+[8396] I: Connecting to configured address/port: localhost:9000.
+[8396] E: Time-out connecting to client (Waited: 200 ms). :-(
+[8396] Log closed at 2019-04-25 15:03:11
+[8396]
+[8396] Log opened at 2019-04-25 15:03:13
+[8396] I: Connecting to configured address/port: localhost:9000.
+[8396] E: Time-out connecting to client (Waited: 200 ms). :-(
+[8396] Log closed at 2019-04-25 15:03:14
+[8396]
+[7080] Log opened at 2019-04-25 16:23:47
+[7080] I: Connecting to configured address/port: localhost:9000.
+[7080] E: Time-out connecting to client (Waited: 200 ms). :-(
+[7080] Log closed at 2019-04-25 16:23:47
+[7080]
+[11636] Log opened at 2019-04-29 13:02:47
+[11636] I: Connecting to configured address/port: localhost:9000.
+[11636] E: Time-out connecting to client (Waited: 200 ms). :-(
+[11636] Log closed at 2019-04-29 13:02:47
+[11636]
+[6736] Log opened at 2019-04-29 13:03:25
+[6736] I: Connecting to configured address/port: localhost:9000.
+[6736] E: Time-out connecting to client (Waited: 200 ms). :-(
+[6736] Log closed at 2019-04-29 13:03:25
+[6736]
+[10756] Log opened at 2019-04-29 13:08:05
+[10756] I: Connecting to configured address/port: localhost:9000.
+[10756] E: Time-out connecting to client (Waited: 200 ms). :-(
+[10756] Log closed at 2019-04-29 13:08:06
+[10756]
