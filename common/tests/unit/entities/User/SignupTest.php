@@ -23,7 +23,7 @@ class SignupTest extends Unit
         $this->assertNotEquals($password, $user->password_hash);
         $this->assertNotEmpty($user->created_at);
         $this->assertNotEmpty($user->auth_key);
-        $this->assertEquals(User::STATUS_INACTIVE, $user->status);
+        $this->assertTrue($user->isInactive());
 
     }
 }
